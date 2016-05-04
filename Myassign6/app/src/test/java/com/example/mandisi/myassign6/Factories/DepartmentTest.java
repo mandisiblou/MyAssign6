@@ -23,15 +23,15 @@ public class DepartmentTest {
 
     @Test
     public void studenttestRoleCreation() throws Exception {
-        Department department = factory.createDepartment("211", "A");
+        Department department = factory.createDepartment("ADMIN", "A");
         Assert.assertEquals(department.getSID(), "ADMIN");
     }
 
 
     @Test
     public void testResultsUpdate() throws Exception {
-        Department department = factory.createDepartment("210", "B");
-        Assert.assertEquals(department.getSID(), department.getName());
+        Department department = factory.createDepartment("ADMIN", "B");
+        Assert.assertEquals(department.getSID(), "ADMIN");
 
         // Updated Name
         Department updateDepartment = new Department.Builder()
@@ -39,7 +39,7 @@ public class DepartmentTest {
                 .SID("Ntobs")
                 .build();
 
-        Assert.assertEquals(updateDepartment, "Ntobs");
+        Assert.assertEquals(updateDepartment.getSID(), "Ntobs");
         Assert.assertEquals(department.getName(), updateDepartment.getName());
     }
 }

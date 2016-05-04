@@ -24,15 +24,15 @@ public class CodeTest {
 
     @Test
     public void studenttestRoleCreation() throws Exception {
-        Code code = factory.createCode("211", "A");
+        Code code = factory.createCode("ADMIN", "A");
         Assert.assertEquals(code.getCodeId(), "ADMIN");
     }
 
 
     @Test
     public void testResultsUpdate() throws Exception {
-        Code code = factory.createCode("210", "B");
-        Assert.assertEquals(code.getCodeId(), code.getName());
+        Code code = factory.createCode("ADMIN", "B");
+        Assert.assertEquals(code.getCodeId(), "ADMIN");
 
         // Updated Name
         Code updateCode = new Code.Builder()
